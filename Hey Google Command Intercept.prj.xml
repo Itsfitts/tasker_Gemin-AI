@@ -1,0 +1,1581 @@
+<TaskerData sr="" dvi="1" tv="6.2.6-beta">
+	<Profile sr="prof110" ve="2">
+		<cdate>1687947803464</cdate>
+		<clp>true</clp>
+		<edate>1687877233632</edate>
+		<flags>8</flags>
+		<id>110</id>
+		<mid0>108</mid0>
+		<mid1>104</mid1>
+		<nme>Googling</nme>
+		<App sr="con0" ve="2">
+			<cls0>com.google.android.googlequicksearchbox.SearchActivity</cls0>
+			<flags>2</flags>
+			<label0>Google</label0>
+			<pkg0>com.google.android.googlequicksearchbox</pkg0>
+		</App>
+	</Profile>
+	<Profile sr="prof111" ve="2">
+		<cdate>1687947803467</cdate>
+		<clp>true</clp>
+		<edate>1687800276609</edate>
+		<flags>8</flags>
+		<id>111</id>
+		<limit>true</limit>
+		<mid0>103</mid0>
+		<nme>Cancel Google Search Listen With Tasker</nme>
+		<Event sr="con0" ve="2">
+			<code>3050</code>
+			<pri>0</pri>
+			<Str sr="arg0" ve="3">%Googling</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="0"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof112" ve="2">
+		<cdate>1687947803472</cdate>
+		<clp>true</clp>
+		<edate>1687867651832</edate>
+		<flags>8</flags>
+		<id>112</id>
+		<limit>true</limit>
+		<mid0>100</mid0>
+		<nme>Example Profile To Say Something</nme>
+		<Event sr="con0" ve="2">
+			<code>3050</code>
+			<pri>0</pri>
+			<Str sr="arg0" ve="3">%LastGoogleSearch</Str>
+			<Str sr="arg1" ve="3">say *</Str>
+			<Int sr="arg2" val="0"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof113" ve="2">
+		<cdate>1687947803481</cdate>
+		<edate>1687948012926</edate>
+		<flags>8</flags>
+		<id>113</id>
+		<mid0>98</mid0>
+		<mid1>99</mid1>
+		<nme>If Intercepting Google Search Send It To Tasker</nme>
+		<State sr="con0" ve="2">
+			<code>165</code>
+			<ConditionList sr="if">
+				<bool0>And</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%Googling</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%command_element_id</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</State>
+	</Profile>
+	<Project sr="proj0" ve="2">
+		<cdate>1687767391429</cdate>
+		<name>Hey Google Command Intercept</name>
+		<pids>111,113,110,112</pids>
+		<tids>99,98,102,105,107,109,106,108,101,103,100,104</tids>
+		<Share sr="Share">
+			<b>false</b>
+			<d>Intercept Google searches started with &lt;b&gt;Hey Google&lt;/b&gt; and send the search command into Tasker so you can do what you want with it.
+&lt;br /&gt;&lt;br /&gt;
+You can essentially &lt;b&gt;replace Google Assistant but keep the no-hands functionality&lt;/b&gt;!
+&lt;h4&gt;How It Works&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;When you import the project you can select if you want to use a &lt;b&gt;keyword&lt;/b&gt; or not&lt;/li&gt;
+    &lt;ul&gt;
+        &lt;li&gt;If you use a keyword, only commands starting with that keyword will be sent to Tasker&lt;/li&gt;
+        &lt;li&gt;If you don't use a keyword, all commands will be sent to Tasker and you'll stop Google.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;li&gt;After a Google command is recognized, it'll be set to the &lt;b&gt;%LastGoogleSearch&lt;/b&gt; variable. You can use this variable in your profiles or tasks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Example Profile&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Create a new profile with the &lt;b&gt;Event&lt;/b&gt; &amp;gt; &lt;b&gt;Variable Set&lt;/b&gt; condition&lt;/li&gt;
+    &lt;li&gt;Use the &lt;b&gt;%LastGoogleSearch&lt;/b&gt; variable in the condition and don't set a value for it to trigger&lt;/li&gt;
+    &lt;li&gt;In the task use the &lt;b&gt;Say&lt;/b&gt; action and set the text to &lt;b&gt;Searched for %LastGoogleSearch&lt;/b&gt;&lt;/li&gt;
+    &lt;li&gt;Back out of Tasker all the way to save&lt;/li&gt;    
+&lt;/ul&gt;
+&lt;p&gt;Check out the example profile in this project to see a similar example&lt;/p&gt;
+&lt;p&gt;Now when you do any "Hey Google" command, it'll be cancelled and Tasker will say the command out loud!&lt;/p&gt;
+&lt;p&gt;Of course, you can do anything you want with this, so get creative!&lt;/p&gt;
+&lt;p&gt;For example, you could totally &lt;a href="https://taskernet.com/shares/?user=AS35m8ne7oO4s%2BaDx%2FwlzjdFTfVMWstg1ay5AkpiNdrLoSXEZdFfw1IpXiyJCVLNW0yn&amp;id=Project%3AHey+Google+ChatGPT"&gt;replace Google Assistant with ChatGPT&lt;/a&gt; with this! 😁&lt;/p&gt;</d>
+			<g></g>
+			<p>false</p>
+			<t>Setup Hey Google Command Intercept</t>
+		</Share>
+		<ProfileVariable sr="pv0">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn>Google Command Element ID</pvdn>
+			<pvid>37</pvid>
+			<pvit>pj</pvit>
+			<pvn>%command_element_id</pvn>
+			<pvt>t</pvt>
+			<strout>false</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv1">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn>Hey Google Intercept Keyword</pvdn>
+			<pvid>37</pvid>
+			<pvit>pj</pvit>
+			<pvn>%keyword</pvn>
+			<pvt>t</pvt>
+			<strout>false</strout>
+		</ProfileVariable>
+	</Project>
+	<Task sr="task100">
+		<cdate>1687862432978</cdate>
+		<edate>1687862565365</edate>
+		<id>100</id>
+		<pri>6</pri>
+		<Action sr="act0" ve="7">
+			<code>598</code>
+			<Str sr="arg0" ve="3">%evtprm2</Str>
+			<Str sr="arg1" ve="3">^say </Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Saying %evtprm2</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>559</code>
+			<Str sr="arg0" ve="3">%evtprm2</Str>
+			<Str sr="arg1" ve="3">default:default</Str>
+			<Int sr="arg2" val="3"/>
+			<Int sr="arg3" val="5"/>
+			<Int sr="arg4" val="5"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task101">
+		<cdate>1687768663840</cdate>
+		<edate>1687947888350</edate>
+		<id>101</id>
+		<nme>Setup Hey Google Command Intercept</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">Example Profile To Say Something</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%title</Str>
+			<Str sr="arg1" ve="3">Hey Google Command Intercept</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>319</code>
+			<Str sr="arg0" ve="3">android.permission.BIND_ACCESSIBILITY_SERVICE</Str>
+			<Str sr="arg1" ve="3">For Tasker to be able to detect when you say "Hey Google", Tasker's accessibility service needs to be enabled.
+
+Without this this project may not work.</Str>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%search_variable_explanation</Str>
+			<Str sr="arg1" ve="3">To use the Hey Google search commands in Tasker create a new profile with the
+
+Event &gt; Variable Set condition
+
+and use the
+
+\%LastGoogleSearch
+
+variable there. 
+
+That variable will always contain the last search command you performed.
+
+In the task you can do anything you want with the variable.</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%title</Str>
+			<Str sr="arg2" ve="3">Do you want Tasker to completely take over your &lt;b&gt;Hey Google&lt;/b&gt; commands, or only when the command starts with a certain keyword?</Str>
+			<Str sr="arg3" ve="3">completely</Str>
+			<Str sr="arg4" ve="3">keyword</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="1"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%td_button</lhs>
+					<op>2</op>
+					<rhs>completely</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">Setup Hey Google Without Keyword</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">If Intercepting Google Search Send It To Tasker</Str>
+			<Int sr="arg1" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">Cancel Google Search Listen With Tasker</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">Setup Hey Google Keyword</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8"/>
+			<Int sr="arg9"/>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_action_settings</nme>
+			<tint>-1</tint>
+		</Img>
+	</Task>
+	<Task sr="task102">
+		<cdate>1686929223680</cdate>
+		<edate>1687862007534</edate>
+		<id>102</id>
+		<nme>Intercept Hey Google Search</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%command_element_id</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>1040876951</code>
+			<label>query screen</label>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<AppPackage>&lt;null&gt;</AppPackage>
+					<AppPackage-type>java.lang.String</AppPackage-type>
+					<EnableDisableAccessibilityService>&lt;null&gt;</EnableDisableAccessibilityService>
+					<EnableDisableAccessibilityService-type>java.lang.String</EnableDisableAccessibilityService-type>
+					<IsFirstAction>false</IsFirstAction>
+					<IsFirstAction-type>java.lang.Boolean</IsFirstAction-type>
+					<OnlyClickable>false</OnlyClickable>
+					<OnlyClickable-type>java.lang.Boolean</OnlyClickable-type>
+					<OnlyVisible>false</OnlyVisible>
+					<OnlyVisible-type>java.lang.Boolean</OnlyVisible-type>
+					<Password>&lt;null&gt;</Password>
+					<Password-type>java.lang.String</Password-type>
+					<Regex>false</Regex>
+					<Regex-type>java.lang.Boolean</Regex-type>
+					<UIUpdateFields>%command_element_id=:=searchphrase</UIUpdateFields>
+					<UIUpdateFields-type>java.lang.String</UIUpdateFields-type>
+					<UIUpdateText>&lt;null&gt;</UIUpdateText>
+					<UIUpdateText-type>java.lang.String</UIUpdateText-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Variables: searchphrase</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%aiapp
+App Name
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%aicoordinates()
+Element Coordinates
+List of coordinates in the x,y format&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%aiid()
+Element Ids
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%aipackage
+App Package Name
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%aitext()
+Element Texts
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%searchphrase
+searchphrase
+searchphrase&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES7&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES7&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>UIUpdateFields plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<plugininstanceid>fe8a1d02-2e79-4ad7-944c-e4fbc8f466a6</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autoinput.intent.IntentUIQuery</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autoinput</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autoinput.activity.ActivityConfigUIQuery</Str>
+			<Int sr="arg3" val="20"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>245</code>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>598</code>
+			<Str sr="arg0" ve="3">%searchphrase</Str>
+			<Str sr="arg1" ve="3">%keyword </Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%keyword</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">Set Google Search Variable</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg2" ve="3">%searchphrase</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%searchphrase</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>30</code>
+			<Int sr="arg0">
+				<var>250</var>
+			</Int>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%Googling</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">query screen</Str>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%searchphrase</lhs>
+					<op>2</op>
+					<rhs>assistant*</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+			<ConditionList sr="if">
+				<bool0>And</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%keyword</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%searchphrase</lhs>
+					<op>3</op>
+					<rhs>%keyword*</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%Googling</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task103">
+		<cdate>1687784232334</cdate>
+		<edate>1687800276609</edate>
+		<id>103</id>
+		<pri>6</pri>
+		<Action sr="act0" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%title</Str>
+			<Str sr="arg1" ve="3">Hey Google</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>523</code>
+			<Str sr="arg0" ve="3">%title</Str>
+			<Str sr="arg1" ve="3">Intercepting...</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3">Google Search Monitor</Str>
+			<Img sr="arg2" ve="2">
+				<cls>com.google.android.googlequicksearchbox.SearchActivity</cls>
+				<pkg>com.google.android.googlequicksearchbox</pkg>
+			</Img>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="5"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">query screen</Str>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>245</code>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>348</code>
+			<Int sr="arg0" val="5"/>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3">%locked</Str>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>779</code>
+			<Str sr="arg0" ve="3">%title</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>559</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">Locked: %locked</Str>
+			<Str sr="arg1" ve="3">default:default</Str>
+			<Int sr="arg2" val="3"/>
+			<Int sr="arg3" val="5"/>
+			<Int sr="arg4" val="5"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%locked</lhs>
+					<op>2</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>30</code>
+			<Int sr="arg0">
+				<var>500</var>
+			</Int>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>903</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3"/>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="30"/>
+			<Int sr="arg5" val="1"/>
+			<Bundle sr="arg6">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%gv_confidence
+Confidence
+Value from 0 to 100 showing the confidence of the detected value&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%gv_heard
+Heard
+List of possible variations of what was heard&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>1040876951</code>
+			<label>query screen</label>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<AppPackage></AppPackage>
+					<AppPackage-type>java.lang.String</AppPackage-type>
+					<EnableDisableAccessibilityService>&lt;null&gt;</EnableDisableAccessibilityService>
+					<EnableDisableAccessibilityService-type>java.lang.String</EnableDisableAccessibilityService-type>
+					<IsFirstAction>false</IsFirstAction>
+					<IsFirstAction-type>java.lang.Boolean</IsFirstAction-type>
+					<OnlyClickable>false</OnlyClickable>
+					<OnlyClickable-type>java.lang.Boolean</OnlyClickable-type>
+					<OnlyVisible>false</OnlyVisible>
+					<OnlyVisible-type>java.lang.Boolean</OnlyVisible-type>
+					<Password>&lt;null&gt;</Password>
+					<Password-type>java.lang.String</Password-type>
+					<Regex>false</Regex>
+					<Regex-type>java.lang.Boolean</Regex-type>
+					<UIUpdateFields>com.google.android.googlequicksearchbox:id/assistant_right_icon=:=assistant_showing,com.google.android.googlequicksearchbox:id/keyboard_indicator=:=assistant_showing_1</UIUpdateFields>
+					<UIUpdateFields-type>java.lang.String</UIUpdateFields-type>
+					<UIUpdateText>&lt;null&gt;</UIUpdateText>
+					<UIUpdateText-type>java.lang.String</UIUpdateText-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Variables: assistant_showing, assistant_showing_1</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%aiapp
+App Name
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%aicoordinates()
+Element Coordinates
+List of coordinates in the x,y format&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%aiid()
+Element Ids
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%aipackage
+App Package Name
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%aitext()
+Element Texts
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%assistant_showing
+assistant_showing
+assistant_showing&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;%assistant_showing_1
+assistant_showing_1
+assistant_showing_1&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES7&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES7&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES8&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES8&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>UIUpdateFields plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<plugininstanceid>b7b4f7b8-87d8-4f36-bc9b-cfe32c509f0a</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autoinput.intent.IntentUIQuery</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autoinput</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autoinput.activity.ActivityConfigUIQuery</Str>
+			<Int sr="arg3">
+				<var>2</var>
+			</Int>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act20" ve="7">
+			<code>903</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3"/>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="30"/>
+			<Int sr="arg5" val="0"/>
+			<Bundle sr="arg6">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%gv_confidence
+Confidence
+Value from 0 to 100 showing the confidence of the detected value&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%gv_heard
+Heard
+List of possible variations of what was heard&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+		</Action>
+		<Action sr="act21" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act22" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act23" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">Set Google Search Variable</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">%gv_heard</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%errmsg</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<bool0>And</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%assistant_showing</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%assistant_showing_1</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>30</code>
+			<Int sr="arg0">
+				<var>250</var>
+			</Int>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%Googling</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>779</code>
+			<Str sr="arg0" ve="3">%title</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>38</code>
+		</Action>
+	</Task>
+	<Task sr="task104">
+		<cdate>1687656975081</cdate>
+		<edate>1687657019955</edate>
+		<id>104</id>
+		<Action sr="act0" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%Googling</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task105">
+		<cdate>1687764919185</cdate>
+		<edate>1687947920277</edate>
+		<id>105</id>
+		<nme>Find Google Command Element</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%command_element_id</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>389</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""/&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%title
+%command_to_search</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">Finding Command Element
+hello world</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>245</code>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%indexes</Str>
+			<Str sr="arg1" ve="3">%aitext(#?%command_to_search)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>396</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%mt_match_found
+Is Match
+true if there was a match, false otherwise&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%mt_match
+Match
+Can also be accessed as an array&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">%indexes</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">\d+</Str>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%mt_match_found</lhs>
+					<op>3</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%title</Str>
+			<Str sr="arg2" ve="3">Couldn't find the command Element on the screen.
+
+Please try to run the setup task again.</Str>
+			<Str sr="arg3" ve="3">ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%command_index</Str>
+			<Str sr="arg1" ve="3">%mt_match(&lt;)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="0"/>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%command_element_id</Str>
+			<Str sr="arg1" ve="3">%aiid(%command_index)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="0"/>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%title</Str>
+			<Str sr="arg2" ve="3">Found the command element!
+&lt;br/&gt;&lt;br/&gt;
+On your device the element that contains your command seems to be the following:
+&lt;br/&gt;&lt;br/&gt;
+&lt;b&gt;%command_element_id&lt;/b&gt;
+&lt;br/&gt;&lt;br/&gt;
+You can now say commands on Google Assistant and they will be sent to Tasker!</Str>
+			<Str sr="arg3" ve="3">ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="1"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%title</Str>
+			<Str sr="arg2" ve="3">We'll try to automatically setup Google Assistant command interception for you.
+&lt;br/&gt;&lt;br/&gt;
+The Google Assistant will now be launched.
+&lt;br/&gt;&lt;br/&gt;
+Please say &lt;b&gt;%command_to_search&lt;/b&gt; out loud so the correct element on the screen can be found.</Str>
+			<Str sr="arg3" ve="3">ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="1"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>365</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""/&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">LaunchAssistant()</Str>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>30</code>
+			<Int sr="arg0" val="0"/>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>1040876951</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<AppPackage>&lt;null&gt;</AppPackage>
+					<AppPackage-type>java.lang.String</AppPackage-type>
+					<EnableDisableAccessibilityService>&lt;null&gt;</EnableDisableAccessibilityService>
+					<EnableDisableAccessibilityService-type>java.lang.String</EnableDisableAccessibilityService-type>
+					<IsFirstAction>false</IsFirstAction>
+					<IsFirstAction-type>java.lang.Boolean</IsFirstAction-type>
+					<OnlyClickable>false</OnlyClickable>
+					<OnlyClickable-type>java.lang.Boolean</OnlyClickable-type>
+					<OnlyVisible>false</OnlyVisible>
+					<OnlyVisible-type>java.lang.Boolean</OnlyVisible-type>
+					<Password>&lt;null&gt;</Password>
+					<Password-type>java.lang.String</Password-type>
+					<Regex>true</Regex>
+					<Regex-type>java.lang.Boolean</Regex-type>
+					<UIUpdateFields>&lt;null&gt;</UIUpdateFields>
+					<UIUpdateFields-type>java.lang.String</UIUpdateFields-type>
+					<UIUpdateText>(?i)%command_to_search</UIUpdateText>
+					<UIUpdateText-type>java.lang.String</UIUpdateText-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Text: (?i)%command_to_search
+Regex: true</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%aiapp
+App Name
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%aicoordinates()
+Element Coordinates
+List of coordinates in the x,y format&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%aiid()
+Element Ids
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%aipackage
+App Package Name
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%aitext()
+Element Texts
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>UIUpdateText plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<plugininstanceid>aba7e82f-dda5-4719-98d9-9361da39f7de</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autoinput.intent.IntentUIQuery</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autoinput</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autoinput.activity.ActivityConfigUIQuery</Str>
+			<Int sr="arg3" val="20"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Finding Command Element...</Str>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3">Top</Str>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">android.resource://net.dinglisch.android.taskerm/drawable/mw_action_find_replace</Str>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3">#FF999747</Str>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>30</code>
+			<Int sr="arg0" val="0"/>
+			<Int sr="arg1" val="4"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>1040876951</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<AppPackage>&lt;null&gt;</AppPackage>
+					<AppPackage-type>java.lang.String</AppPackage-type>
+					<EnableDisableAccessibilityService>&lt;null&gt;</EnableDisableAccessibilityService>
+					<EnableDisableAccessibilityService-type>java.lang.String</EnableDisableAccessibilityService-type>
+					<IsFirstAction>false</IsFirstAction>
+					<IsFirstAction-type>java.lang.Boolean</IsFirstAction-type>
+					<OnlyClickable>false</OnlyClickable>
+					<OnlyClickable-type>java.lang.Boolean</OnlyClickable-type>
+					<OnlyVisible>true</OnlyVisible>
+					<OnlyVisible-type>java.lang.Boolean</OnlyVisible-type>
+					<Password>&lt;null&gt;</Password>
+					<Password-type>java.lang.String</Password-type>
+					<Regex>false</Regex>
+					<Regex-type>java.lang.Boolean</Regex-type>
+					<UIUpdateFields>&lt;null&gt;</UIUpdateFields>
+					<UIUpdateFields-type>java.lang.String</UIUpdateFields-type>
+					<UIUpdateText>&lt;null&gt;</UIUpdateText>
+					<UIUpdateText-type>java.lang.String</UIUpdateText-type>
+					<com.twofortyfouram.locale.intent.extra.BLURB>Only Visible: true</com.twofortyfouram.locale.intent.extra.BLURB>
+					<com.twofortyfouram.locale.intent.extra.BLURB-type>java.lang.String</com.twofortyfouram.locale.intent.extra.BLURB-type>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%aiapp
+App Name
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%aicoordinates()
+Element Coordinates
+List of coordinates in the x,y format&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%aiid()
+Element Ids
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%aipackage
+App Package Name
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%aitext()
+Element Texts
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%err
+Error Code
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;%errmsg
+Error Message
+Only available if you select &amp;lt;b&amp;gt;Continue Task After Error&amp;lt;/b&amp;gt; and the action ends in error&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES6&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>plugininstanceid plugintypeid </net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS>
+					<net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>java.lang.String</net.dinglisch.android.tasker.extras.VARIABLE_REPLACE_KEYS-type>
+					<net.dinglisch.android.tasker.subbundled>true</net.dinglisch.android.tasker.subbundled>
+					<net.dinglisch.android.tasker.subbundled-type>java.lang.Boolean</net.dinglisch.android.tasker.subbundled-type>
+					<plugininstanceid>aba7e82f-dda5-4719-98d9-9361da39f7de</plugininstanceid>
+					<plugininstanceid-type>java.lang.String</plugininstanceid-type>
+					<plugintypeid>com.joaomgcd.autoinput.intent.IntentUIQuery</plugintypeid>
+					<plugintypeid-type>java.lang.String</plugintypeid-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">com.joaomgcd.autoinput</Str>
+			<Str sr="arg2" ve="3">com.joaomgcd.autoinput.activity.ActivityConfigUIQuery</Str>
+			<Int sr="arg3" val="20"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%Googling</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task106">
+		<cdate>1687786847747</cdate>
+		<edate>1687799672441</edate>
+		<id>106</id>
+		<nme>Setup Hey Google Keyword</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%td_button</lhs>
+					<op>2</op>
+					<rhs>*cancel*</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%title</Str>
+			<Str sr="arg2" ve="3">Tasker will only intercept your Hey Google commands if they start with a certain keyword.
+
+The keyword can be anything you want like "Tasker" for example.</Str>
+			<Str sr="arg3" ve="3">ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%title</Str>
+			<Str sr="arg2" ve="3">Ok. 
+
+Only if your commands start with "%input" will they be sent to Tasker.
+
+%search_variable_explanation</Str>
+			<Str sr="arg3" ve="3">ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%command_element_id</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">Find Google Command Element</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>360</code>
+			<label>select keyword</label>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%input
+Input
+The text that was inserted in the dialog&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%title</Str>
+			<Str sr="arg2" ve="3">Write the keyword here.</Str>
+			<Str sr="arg3" ve="3">%keyword</Str>
+			<Int sr="arg4" val="30"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="1"/>
+			<Str sr="arg8" ve="3"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%keyword</Str>
+			<Str sr="arg1" ve="3">Tasker</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%keyword</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>2</op>
+					<rhs>*cancel*</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%input</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%title</Str>
+			<Str sr="arg2" ve="3">You have to set a keyword.</Str>
+			<Str sr="arg3" ve="3">ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">select keyword</Str>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%keyword</Str>
+			<Str sr="arg1" ve="3">%input</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task107">
+		<cdate>1687787463972</cdate>
+		<edate>1687862216453</edate>
+		<id>107</id>
+		<nme>Setup Hey Google Without Keyword</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%keyword</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%title</Str>
+			<Str sr="arg2" ve="3">Do you want Tasker to intercept your &lt;b&gt;Hey Google&lt;/b&gt; before or after you say your command?
+&lt;br/&gt;&lt;br/&gt;
+If &lt;b&gt;before&lt;/b&gt;, you'll say your voice command to Tasker itself and never even talk to Google. It has the disadvantage of you having to do a small pause between saying &lt;b&gt;Hey Google&lt;/b&gt; and actually saying your command.
+&lt;br/&gt;&lt;br/&gt;
+If &lt;b&gt;after&lt;/b&gt;, you can say your command right after &lt;b&gt;Hey Google&lt;/b&gt; but sometimes Google will start responding before Tasker taking over.</Str>
+			<Str sr="arg3" ve="3">before</Str>
+			<Str sr="arg4" ve="3">after</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="1"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%command_element_id</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">Find Google Command Element</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%td_button</lhs>
+					<op>2</op>
+					<rhs>before</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">Cancel Google Search Listen With Tasker</Str>
+			<Int sr="arg1" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">If Intercepting Google Search Send It To Tasker</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%title</Str>
+			<Str sr="arg2" ve="3">Ok.
+
+Tasker will take over every time you say "Hey Google" and will start its own voice recognition.
+
+You will then say your commands to Tasker itself and Google will not receive them.
+
+%search_variable_explanation</Str>
+			<Str sr="arg3" ve="3">ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">Cancel Google Search Listen With Tasker</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>159</code>
+			<Str sr="arg0" ve="3">If Intercepting Google Search Send It To Tasker</Str>
+			<Int sr="arg1" val="1"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%title</Str>
+			<Str sr="arg2" ve="3">Ok.
+
+Tasker will take over every time you say "Hey Google" and then say a voice command to Google.
+
+After the command is recognized Tasker will take over and Google Assistant will be cancelled.
+
+However, if you want to run a certain command with the Google Assistant, just say "Hey Google Assistant" (instead of just "Hey Google") followed by your command and Tasker will ignore it.
+
+%search_variable_explanation</Str>
+			<Str sr="arg3" ve="3">ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task108">
+		<cdate>1687656944405</cdate>
+		<edate>1687656964380</edate>
+		<id>108</id>
+		<Action sr="act0" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%Googling</Str>
+			<Str sr="arg1" ve="3">1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task109">
+		<cdate>1687800215139</cdate>
+		<edate>1687800242494</edate>
+		<id>109</id>
+		<nme>Set Google Search Variable</nme>
+		<Action sr="act0" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%LastGoogleSearch</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%LastGoogleSearch</Str>
+			<Str sr="arg1" ve="3">%par1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task98">
+		<cdate>1686931953523</cdate>
+		<edate>1687948012926</edate>
+		<id>98</id>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>523</code>
+			<Str sr="arg0" ve="3">Google Search</Str>
+			<Str sr="arg1" ve="3">Intercepting With Tasker...</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3">Google Search Monitor</Str>
+			<Img sr="arg2" ve="2">
+				<cls>com.google.android.googlequicksearchbox.SearchActivity</cls>
+				<pkg>com.google.android.googlequicksearchbox</pkg>
+			</Img>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="5"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">Intercept Hey Google Search</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+	</Task>
+	<Task sr="task99">
+		<cdate>1686931996514</cdate>
+		<edate>1687770877255</edate>
+		<id>99</id>
+		<Action sr="act0" ve="7">
+			<code>779</code>
+			<Str sr="arg0" ve="3">Google Search</Str>
+			<Int sr="arg1" val="0"/>
+		</Action>
+	</Task>
+</TaskerData>

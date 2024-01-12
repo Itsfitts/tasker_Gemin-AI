@@ -1,0 +1,354 @@
+<TaskerData sr="" dvi="1" tv="6.2.6-beta">
+	<Profile sr="prof107" ve="2">
+		<cdate>1688034079571</cdate>
+		<clp>true</clp>
+		<edate>1687875274553</edate>
+		<flags>8</flags>
+		<id>107</id>
+		<mid0>105</mid0>
+		<nme>ChatGPT Run Task</nme>
+		<Event sr="con0" ve="2">
+			<code>3050</code>
+			<pri>0</pri>
+			<Str sr="arg0" ve="3">%LastGoogleSearch</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="0"/>
+		</Event>
+	</Profile>
+	<Project sr="proj0" ve="2">
+		<cdate>1687182601560</cdate>
+		<name>Hey Google ChatGPT</name>
+		<pids>107</pids>
+		<tids>106,105</tids>
+		<Share sr="Share">
+			<b>false</b>
+			<d>Replace Google Assistant with ChatGPT! Make sure to carefully read the instructions below and also the instructions of the other mentioned projects.
+&lt;br /&gt;&lt;br /&gt;
+&lt;p&gt;&lt;a href="https://youtu.be/LpX1hNMxVsI" target="_blank"&gt;Check out the demo video&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=sRNKZfxDZ4A" target="_blank"&gt;Full Tutorial video&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;How To Use&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Install and unlock &lt;a href="https://play.google.com/store/apps/details?id=com.joaomgcd.autoinput"&gt;AutoInput&lt;/a&gt;. It allows you to detect when you say a command to Google Assistant.&lt;/li&gt;
+    &lt;li&gt;Import the &lt;a href="https://taskernet.com/shares/?user=AS35m8ne7oO4s%2BaDx%2FwlzjdFTfVMWstg1ay5AkpiNdrLoSXEZdFfw1IpXiyJCVLNW0yn&amp;id=Project%3AHey+Google+Command+Intercept" target="_blank"&gt;Hey Google Command Intercept&lt;/a&gt; project. It allows you to get Google Assistant commands into Tasker.&lt;/li&gt;
+    &lt;li&gt;Import the &lt;a href="https://taskernet.com/shares/?user=AS35m8ne7oO4s%2BaDx%2FwlzjdFTfVMWstg1ay5AkpiNdrLoSXEZdFfw1IpXiyJCVLNW0yn&amp;id=Project%3AChat+GPT" target="_blank"&gt;ChatGPT&lt;/a&gt; project. It allows you to have conversations with ChatGPT.&lt;/li&gt;
+    &lt;li&gt;Import the &lt;a href="https://taskernet.com/shares/?user=AS35m8ne7oO4s%2BaDx%2FwlzjdFTfVMWstg1ay5AkpiNdrLoSXEZdFfw1IpXiyJCVLNW0yn&amp;id=Project%3AChatGPT+Task+Caller" target="_blank"&gt;ChatGPT Task Caller&lt;/a&gt; project. It allows you to make ChatGPT intelligently call your Tasker tasks.&lt;/li&gt;    
+    &lt;li&gt;Finally, import this project to handle intercepted Google Assistant commands and send them to ChatGPT.&lt;/li&gt;
+    &lt;li&gt;If you say &lt;b&gt;any&lt;/b&gt; command to Google Assistant it'll be sent to &lt;b&gt;ChatGPT Task Caller&lt;/b&gt; to run your tasks with the help of ChatGPT's natural language capabilities&lt;/li&gt;
+    &lt;li&gt;If your Google Assistant command starts with the word &lt;b&gt;chat&lt;/b&gt; (e.g. &lt;b&gt;chat what's the meaning of life&lt;/b&gt;), it'll be sent to &lt;b&gt;ChatGPT&lt;/b&gt; and you can have a back-and-forth voice chat about it. No Tasker tasks will be executed.&lt;/li&gt;
+&lt;/ul&gt;</d>
+			<g>Assistant,ChatGPT,Developer's Choice</g>
+			<p>true</p>
+			<t></t>
+		</Share>
+		<ProfileVariable sr="pv0">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn>Saved media volume</pvdn>
+			<pvid>33</pvid>
+			<pvit>pj</pvit>
+			<pvn>%media_volume</pvn>
+			<pvt>t</pvt>
+			<strout>false</strout>
+		</ProfileVariable>
+	</Project>
+	<Task sr="task105">
+		<cdate>1687769472713</cdate>
+		<edate>1687875274553</edate>
+		<id>105</id>
+		<pri>6</pri>
+		<Action sr="act0" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%LastGoogleSearch</lhs>
+					<op>2</op>
+					<rhs>chat*</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%command</Str>
+			<Str sr="arg1" ve="3">%LastGoogleSearch</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>598</code>
+			<Str sr="arg0" ve="3">%command</Str>
+			<Str sr="arg1" ve="3">^chat </Str>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%command</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">ChatGPT Voice Loop</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">%command</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%taskname</Str>
+			<Str sr="arg1" ve="3">Chat GPT Voice Task</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">%taskname</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">%LastGoogleSearch</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>38</code>
+		</Action>
+	</Task>
+	<Task sr="task106">
+		<cdate>1687786047670</cdate>
+		<edate>1687948671966</edate>
+		<id>106</id>
+		<nme>ChatGPT Voice Loop</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%prefix</Str>
+			<Str sr="arg1" ve="3">System &gt;&gt;</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">%prefix Clear Chat</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">%prefix Send Chat</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">%gv_heard</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">%response</Str>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%scene</Str>
+			<Str sr="arg1" ve="3">ChatGPT Stop Talking</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>47</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">%scene</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="200"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>559</code>
+			<Str sr="arg0" ve="3">%response</Str>
+			<Str sr="arg1" ve="3">default:default</Str>
+			<Int sr="arg2" val="3"/>
+			<Int sr="arg3" val="5"/>
+			<Int sr="arg4" val="5"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>49</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">%scene</Str>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%errmsg</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>135</code>
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">start loop</Str>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>547</code>
+			<label>start loop</label>
+			<Str sr="arg0" ve="3">%response</Str>
+			<Str sr="arg1" ve="3">Say Anything or Say "Stop" To Stop Chatting</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%response</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%gv_heard</Str>
+			<Str sr="arg1" ve="3">%par1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%par1</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>903</code>
+			<label>voice Prompt</label>
+			<se>false</se>
+			<Str sr="arg0" ve="3">%response</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="30"/>
+			<Int sr="arg5" val="0"/>
+			<Bundle sr="arg6">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%gv_confidence
+Confidence
+Value from 0 to 100 showing the confidence of the detected value&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%gv_heard
+Heard
+List of possible variations of what was heard&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%gv_heard</lhs>
+					<op>2</op>
+					<rhs>stop</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+	</Task>
+</TaskerData>

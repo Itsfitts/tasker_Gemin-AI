@@ -1,0 +1,1505 @@
+<TaskerData sr="" dvi="1" tv="6.2.12-rc">
+	<dmetric>1080.0,2105.0</dmetric>
+	<matterdevices>[{"id":4945074096814960952,"name":"Leaf"}]</matterdevices>
+	<Profile sr="prof481" ve="2">
+		<cdate>1691066544337</cdate>
+		<clp>true</clp>
+		<edate>1686835025183</edate>
+		<flags>8</flags>
+		<id>481</id>
+		<mid0>476</mid0>
+		<Event sr="con0" ve="2">
+			<code>201</code>
+			<App sr="arg0"/>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+		</Event>
+	</Profile>
+	<Profile sr="prof482" ve="2">
+		<cdate>1691066544338</cdate>
+		<clp>true</clp>
+		<edate>1688473523058</edate>
+		<flags>8</flags>
+		<id>482</id>
+		<mid0>474</mid0>
+		<nme>Backup Task Descriptions When They Change</nme>
+		<Event sr="con0" ve="2">
+			<code>3050</code>
+			<pri>0</pri>
+			<Str sr="arg0" ve="3">%ChatGPTTaskDescriptions</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="0"/>
+		</Event>
+	</Profile>
+	<Project sr="proj0" ve="2">
+		<cdate>1686744842644</cdate>
+		<name>ChatGPT Task Caller</name>
+		<pids>482,481</pids>
+		<scenes>ChatGPT Stop Talking,ChatGPT Task Descriptions</scenes>
+		<tids>475,479,476,473,477,480,478,472,474</tids>
+		<Share sr="Share">
+			<b>false</b>
+			<d>&lt;h3&gt;Use ChatGPT to control your phone using Tasker and Natural Language!&lt;/h3&gt;
+
+&lt;p&gt;Check out the video demo for this project &lt;a href="https://youtu.be/CjNzpYGsW5c"&gt;here&lt;/a&gt;!&lt;/p&gt;
+&lt;h4&gt;Before You Get Started&lt;/h4&gt;
+&lt;p&gt;The &lt;a href="https://platform.openai.com/docs/guides/chat"&gt;ChatGPT API&lt;/a&gt; is a paid service, but for Tasker uses it seems like a very cheap service.&lt;/p&gt;
+&lt;p&gt;Even so, OpenAI controls the amount of requests you can do based on your &lt;a href="https://platform.openai.com/account/usage"&gt;budget&lt;/a&gt;. If you hit any quota limits, please contact OpenAI about it, since Tasker can't control that part.&lt;/p&gt;
+&lt;p&gt;Also, start by generating an &lt;a href="https://platform.openai.com/account/api-keys"&gt;API Key here&lt;/a&gt; so you have it handy to paste it into the prompt that shows up when you import this project.&lt;/p&gt;
+
+&lt;h4&gt;What It Does&lt;/h4&gt;
+&lt;p&gt;This project allows you to use ChatGPT's impressive language understanding capabilities and use them to run your Tasker tasks in an intelligent way.&lt;/p&gt;
+&lt;p&gt;Simply describe your tasks in the built-in tool, then say what you want in natural language and ChatGPT will figure out what it needs to call!&lt;/p&gt;
+&lt;p&gt;You can even return values back to ChatGPT so that it can tell you any info you want, like your phone's battery level or anything else really!&lt;/p&gt;
+&lt;h4&gt;How to Get Started&lt;/h4&gt;
+&lt;ul&gt;
+    &lt;li&gt;Import this project and insert the ChatGPT API key when prompted.&lt;/li&gt;
+    &lt;li&gt;Import this &lt;a href="https://taskernet.com/shares/?user=AS35m8ne7oO4s%2BaDx%2FwlzjdFTfVMWstg1ay5AkpiNdrLoSXEZdFfw1IpXiyJCVLNW0yn&amp;id=Project%3AChatGPT+Task+Caller+Examples"&gt;&lt;b&gt;Example Tasks&lt;/b&gt;&lt;/a&gt; project, so that you have easy to understand examples you can follow&lt;/li&gt;
+    &lt;li&gt;Run the &lt;b&gt;ChatGPT Function Setup&lt;/b&gt; task so that you can add descriptions to the tasks you want ChatGPT to be able to run. If you imported the &lt;b&gt;Examples&lt;/b&gt; project and ran its setup task, notice how those tasks already have descriptions.&lt;/li&gt;
+    &lt;li&gt;Run the &lt;b&gt;ChatGPT Voice Task&lt;/b&gt; and try saying something like &lt;b&gt;Toggle the flashlight&lt;/b&gt;. ChatGPT will now select the &lt;b&gt;Toggle Flashlight&lt;/b&gt; task to run and run it!&lt;/li&gt;
+    &lt;li&gt;Try running the other example tasks and see how they work! Remember that you can use natural language to run them! No need to be precise!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Important Notes&lt;/h4&gt;
+
+&lt;ul&gt;
+    &lt;li&gt;&lt;b&gt;Multi-language support:&lt;/b&gt; you can use this in any language that ChatGPT understands. The descriptions can even be in one language and you can still do your voice commands in a different language!&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Replace Your System Assistant:&lt;/b&gt; go into Tasker &amp;gt; Menu &amp;gt; More &amp;gt; Android Settings &amp;gt; Assistant Settings and make Tasker your assistant. Now you can do voice commands with ChatGPT directly!&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Add As a Home Screen Shortcut/Widget:&lt;/b&gt; to add any of the tasks as home screen shortcuts, long-touch your Home Launcher app, select &lt;b&gt;Add Widget/Shortcut&lt;/b&gt; (or something similar) and then select the &lt;b&gt;Tasker Shortcut&lt;/b&gt; widget. Note: some launchers do not support shortcuts.&lt;/li&gt;
+    &lt;li&gt;&lt;b&gt;Add as Quick Setting Tile:&lt;/b&gt; you can run the included &lt;b&gt;ChatGPT Set Voice Task Quick Setting&lt;/b&gt; task to make your first Tasker Quick Setting run the Voice Task in this project, so you can quickly call it from anywhere!&lt;/li&gt;
+    &lt;li&gt;This project has a &lt;b&gt;Project Variable&lt;/b&gt; that you can access by opening Tasker, touching the ChatGPT Task Caller project name and going to Properties. If you ever need to change it, do it here.&lt;/li&gt;
+&lt;li&gt;Your task descriptions will be backed up in the Tasker/ChatGPT folder.&lt;/li&gt;
+&lt;/ul&gt;</d>
+			<g>Artificial Intelligence,ChatGPT,Developer's Choice</g>
+			<p>true</p>
+			<t>ChatGPT Function Setup</t>
+		</Share>
+		<ProfileVariable sr="pv0">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>true</pvci>
+			<pvd>Enter your ChatGPT API Key</pvd>
+			<pvdn>ChatGPT API Key</pvdn>
+			<pvid>38</pvid>
+			<pvit>pj</pvit>
+			<pvn>%chatgpt_api_key</pvn>
+			<pvt>t</pvt>
+			<strout>false</strout>
+		</ProfileVariable>
+		<ProfileVariable sr="pv1">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn>ChatGPT Version</pvdn>
+			<pvid>38</pvid>
+			<pvit>pj</pvit>
+			<pvn>%chatgpt_version</pvn>
+			<pvt>t</pvt>
+			<strout>false</strout>
+		</ProfileVariable>
+	</Project>
+	<Scene sr="sceneChatGPT Stop Talking">
+		<cdate>1686824700440</cdate>
+		<edate>1686832570616</edate>
+		<heightLand>-1</heightLand>
+		<heightPort>200</heightPort>
+		<nme>ChatGPT Stop Talking</nme>
+		<widthLand>-1</widthLand>
+		<widthPort>200</widthPort>
+		<TextElement sr="elements0" ve="3">
+			<clickTask>477</clickTask>
+			<flags>4</flags>
+			<geom>0,0,200,200,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">Text1</Str>
+			<Str sr="arg1" ve="3">🛑</Str>
+			<Int sr="arg2" val="42"/>
+			<Int sr="arg3" val="100"/>
+			<Str sr="arg4" ve="3">#FFFFFFFF</Str>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="0"/>
+		</TextElement>
+		<PropertiesElement sr="props">
+			<Int sr="arg0" val="1"/>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">#00FFFFFF</Str>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">Stop Talking ChatGPT</Str>
+			<Str sr="arg5" ve="3"/>
+			<Img sr="arg6" ve="2"/>
+			<Str sr="arg7" ve="3"/>
+		</PropertiesElement>
+	</Scene>
+	<Scene sr="sceneChatGPT Task Descriptions">
+		<cdate>1686745335621</cdate>
+		<edate>1686825181782</edate>
+		<heightLand>-1</heightLand>
+		<heightPort>2200</heightPort>
+		<nme>ChatGPT Task Descriptions</nme>
+		<widthLand>-1</widthLand>
+		<widthPort>1080</widthPort>
+		<WebElement sr="elements0" ve="2">
+			<flags>4</flags>
+			<geom>0,0,1080,2200,-1,-1,-1,-1</geom>
+			<Str sr="arg0" ve="3">WebView1</Str>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg2" ve="3">Tasker/taskdescriptions.html</Str>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="1"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Str sr="arg8" ve="3"/>
+		</WebElement>
+		<PropertiesElement sr="props">
+			<Int sr="arg0" val="2"/>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3">#FFFFFFFF</Str>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3">Task Descriptions</Str>
+			<Str sr="arg5" ve="3"/>
+			<Img sr="arg6" ve="2">
+				<cls>net.dinglisch.android.taskerm.Tasker</cls>
+				<pkg>net.dinglisch.android.taskerm</pkg>
+			</Img>
+			<Str sr="arg7" ve="3"/>
+		</PropertiesElement>
+	</Scene>
+	<Task sr="task472">
+		<cdate>1688718177062</cdate>
+		<edate>1688737556773</edate>
+		<id>472</id>
+		<nme>ChatGPT Task Caller Set GPT Version</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>355</code>
+			<Str sr="arg0" ve="3">%options</Str>
+			<Int sr="arg1" val="9999"/>
+			<Str sr="arg2" ve="3">3.5 Turbo - faster and cheaper, but less precise/worse responses</Str>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>355</code>
+			<Str sr="arg0" ve="3">%options</Str>
+			<Int sr="arg1" val="9999"/>
+			<Str sr="arg2" ve="3">4 - slower and more expensive, but usually much better responses (you need to have access to it on https://platform.openai.com/playground)</Str>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>378</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%ld_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%ld_long
+Long
+true if item was long clicked, false otherwise&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%ld_selected
+Selected
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%ld_selected_index
+Selected Index
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Str sr="arg2" ve="3">Select GPT Version</Str>
+			<Str sr="arg3" ve="3">%options</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="30"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%ld_selected_index</lhs>
+					<op>2</op>
+					<rhs>1</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%chatgpt_version</Str>
+			<Str sr="arg1" ve="3">gpt-3.5-turbo</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%chatgpt_version</Str>
+			<Str sr="arg1" ve="3">gpt-4</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>38</code>
+		</Action>
+	</Task>
+	<Task sr="task473">
+		<cdate>1686745853162</cdate>
+		<edate>1691066668655</edate>
+		<id>473</id>
+		<nme>ChatGPT Function Setup</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%chatgpt_version</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">ChatGPT Task Caller Set GPT Version</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%version_downloaded</Str>
+			<Str sr="arg1" ve="3">%version</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">System &gt;&gt; ChatGPT Function Task Remove Deleted Tasks</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>347</code>
+			<Int sr="arg0" val="7"/>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3">%tasks</Str>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%tasks</Str>
+			<Str sr="arg1" ve="3">%tasks(+$$##$$)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>47</code>
+			<Str sr="arg0" ve="3">ChatGPT Task Descriptions</Str>
+			<Int sr="arg1" val="7"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="100"/>
+			<Int sr="arg3" val="100"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="1"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>389</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""/&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">%version
+%debug</Str>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">4
+</Str>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="3"/>
+			<Int sr="arg7" val="0"/>
+			<Int sr="arg8" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%file</Str>
+			<Str sr="arg1" ve="3">Tasker/taskdescriptions.html</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="0"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>342</code>
+			<Int sr="arg0" val="5"/>
+			<Str sr="arg1" ve="3">%file</Str>
+			<Str sr="arg2" ve="3">%exists</Str>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%exists</lhs>
+					<op>3</op>
+					<rhs>true</rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%version</lhs>
+					<op>1</op>
+					<rhs>%version_downloaded</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">Updating tasks page...</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>339</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_cookies
+Cookies
+The cookies the server sent in the response in the Cookie:COOKIE_VALUE format. You can use this directly in the 'Headers' field of the HTTP Request action&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_file_output
+File Output
+Will always contain the file's full path even if you specified a directory as the File to save.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_code
+Response Code
+The HTTP Code the server responded&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_headers()
+Response Headers
+The HTTP Headers the server sent in the response. Each header is in the 'key:value' format&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_response_length
+Response Length
+The size of the response in bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">https://joaoapps.com/Tasker/taskertasks.html</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%file</Str>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>339</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_cookies
+Cookies
+The cookies the server sent in the response in the Cookie:COOKIE_VALUE format. You can use this directly in the 'Headers' field of the HTTP Request action&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_file_output
+File Output
+Will always contain the file's full path even if you specified a directory as the File to save.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_response_code
+Response Code
+The HTTP Code the server responded&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_headers()
+Response Headers
+The HTTP Headers the server sent in the response. Each header is in the 'key:value' format&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_response_length
+Response Length
+The size of the response in bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg2" ve="3">https://drive.google.com/uc?export=download&amp;id=1iQWt4ipijeH0QIa52do4bNDkMBFwCIT_</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3">%file</Str>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%debug</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_action_settings</nme>
+		</Img>
+		<ProfileVariable sr="pv0">
+			<clearout>false</clearout>
+			<exportval></exportval>
+			<immutable>false</immutable>
+			<pvci>false</pvci>
+			<pvd></pvd>
+			<pvdn>Downloaded Version</pvdn>
+			<pvid>13</pvid>
+			<pvit>t</pvit>
+			<pvn>%version_downloaded</pvn>
+			<pvt>t</pvt>
+			<strout>false</strout>
+		</ProfileVariable>
+	</Task>
+	<Task sr="task474">
+		<cdate>1688473271034</cdate>
+		<edate>1688473512886</edate>
+		<id>474</id>
+		<pri>6</pri>
+		<Action sr="act0" ve="7">
+			<code>394</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%formatted
+00. Formatted
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%dt_millis
+1. MilliSeconds
+Milliseconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%dt_seconds
+2. Seconds
+Seconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%dt_day_of_month
+3. Day Of Month
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%dt_month_of_year
+4. Month Of Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%dt_year
+5. Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3">yyyy_MM_dd</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>410</code>
+			<Str sr="arg0" ve="3">Tasker/ChatGPT/taskdescriptions_%formatted.txt</Str>
+			<Str sr="arg1" ve="3">%ChatGPTTaskDescriptions</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task475">
+		<cdate>1687166109969</cdate>
+		<edate>1687855809927</edate>
+		<id>475</id>
+		<nme>System &gt;&gt; ChatGPT Function Task Remove Deleted Tasks</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%ChatGPTTaskDescriptions</Str>
+			<Str sr="arg1" ve="3">[]</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<bool0>Or</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%ChatGPTTaskDescriptions</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%ChatGPTTaskDescriptions</lhs>
+					<op>2</op>
+					<rhs>%existing</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>347</code>
+			<Int sr="arg0" val="7"/>
+			<Str sr="arg1" ve="3"/>
+			<Str sr="arg2" ve="3">%tasks</Str>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%tasks</Str>
+			<Str sr="arg1" ve="3">%tasks(+$$#$##)</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%descriptions</Str>
+			<Str sr="arg1" ve="3">%ChatGPTTaskDescriptions</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>129</code>
+			<Str sr="arg0" ve="3">const descriptionsObject = JSON.parse(descriptions);
+        const tasksArray = tasks.split("$$#$##");
+var existing = JSON.stringify(descriptionsObject.filter(description =&gt; tasksArray.includes(description.taskerName)));</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="45"/>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%ChatGPTTaskDescriptions</Str>
+			<Str sr="arg1" ve="3">%existing</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+	</Task>
+	<Task sr="task476">
+		<cdate>1686756682474</cdate>
+		<edate>1688719746981</edate>
+		<id>476</id>
+		<nme>Chat GPT Voice Task</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%gv_heard</Str>
+			<Str sr="arg1" ve="3">%par1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%response</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>47</code>
+			<Str sr="arg0" ve="3">ChatGPT Stop Talking</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="1"/>
+			<Int sr="arg2" val="200"/>
+			<Int sr="arg3" val="200"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Int sr="arg7" val="1"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>559</code>
+			<Str sr="arg0" ve="3">%response</Str>
+			<Str sr="arg1" ve="3">default:default</Str>
+			<Int sr="arg2" val="3"/>
+			<Int sr="arg3" val="5"/>
+			<Int sr="arg4" val="5"/>
+			<Int sr="arg5" val="1"/>
+			<Int sr="arg6" val="0"/>
+			<Int sr="arg7" val="0"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">ChatGPT Stop Talking</Str>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>903</code>
+			<se>false</se>
+			<Str sr="arg0" ve="3">What Do You Want To Do?</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Int sr="arg3" val="1"/>
+			<Int sr="arg4" val="30"/>
+			<Int sr="arg5" val="0"/>
+			<Bundle sr="arg6">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%gv_confidence
+Confidence
+Value from 0 to 100 showing the confidence of the detected value&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%gv_heard
+Heard
+List of possible variations of what was heard&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>394</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%formatted
+00. Formatted
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%dt_millis
+1. MilliSeconds
+Milliseconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%dt_seconds
+2. Seconds
+Seconds Since Epoch&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%dt_day_of_month
+3. Day Of Month
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%dt_month_of_year
+4. Month Of Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%dt_year
+5. Year
+&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3">K:mm a</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>547</code>
+			<on>false</on>
+			<Str sr="arg0" ve="3">%command</Str>
+			<Str sr="arg1" ve="3">%gv_heard. the time is %formatted</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="0"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%command</Str>
+			<Str sr="arg1" ve="3">%gv_heard.</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="0"/>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">System &gt;&gt; Perform Function Task</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">%command</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">%response</Str>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Img sr="icn" ve="2">
+			<nme>mw_action_settings_voice</nme>
+		</Img>
+	</Task>
+	<Task sr="task477">
+		<cdate>1686825002680</cdate>
+		<edate>1686825002680</edate>
+		<id>477</id>
+		<pri>102</pri>
+		<Action sr="act0" ve="7">
+			<code>49</code>
+			<Str sr="arg0" ve="3">ChatGPT Stop Talking</Str>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>449</code>
+			<Int sr="arg0" val="0"/>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>697</code>
+		</Action>
+	</Task>
+	<Task sr="task478">
+		<cdate>1686827036691</cdate>
+		<edate>1687855214460</edate>
+		<id>478</id>
+		<nme>ChatGPT Set Voice Task Quick Setting</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>162</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3">Chat GPT Voice Task</Str>
+			<Str sr="arg10" ve="3"/>
+			<Str sr="arg11" ve="3"/>
+			<Str sr="arg12" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3">Voice Task</Str>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task479">
+		<cdate>1686823172392</cdate>
+		<edate>1688719402746</edate>
+		<id>479</id>
+		<nme>System &gt;&gt; ChatGPT HTTP Request</nme>
+		<Action sr="act0" ve="7">
+			<code>339</code>
+			<se>false</se>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%http_cookies
+Cookies
+The cookies the server sent in the response in the Cookie:COOKIE_VALUE format. You can use this directly in the 'Headers' field of the HTTP Request action&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;%http_data
+Data
+Data that the server responded from the HTTP request.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES1&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;%http_file_output
+File Output
+Will always contain the file's full path even if you specified a directory as the File to save.&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES2&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;%http_response_code
+Response Code
+The HTTP Code the server responded&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES3&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;%http_headers()
+Response Headers
+The HTTP Headers the server sent in the response. Each header is in the 'key:value' format&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES4&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;%http_response_length
+Response Length
+The size of the response in bytes&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES5&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg10" val="0"/>
+			<Int sr="arg11" val="0"/>
+			<Int sr="arg12" val="1"/>
+			<Str sr="arg2" ve="3">https://api.openai.com/v1/chat/completions</Str>
+			<Str sr="arg3" ve="3">Authorization:Bearer %chatgpt_api_key</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3">%par1</Str>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="30"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%errmsg</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>377</code>
+			<Bundle sr="arg0">
+				<Vals sr="val">
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES>&lt;StringArray sr=""&gt;&lt;_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;%td_button
+Button
+The label of the button that was clicked&lt;/_array_net.dinglisch.android.tasker.RELEVANT_VARIABLES0&gt;&lt;/StringArray&gt;</net.dinglisch.android.tasker.RELEVANT_VARIABLES>
+					<net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>[Ljava.lang.String;</net.dinglisch.android.tasker.RELEVANT_VARIABLES-type>
+				</Vals>
+			</Bundle>
+			<Str sr="arg1" ve="3">Error</Str>
+			<Str sr="arg2" ve="3">%errmsg</Str>
+			<Str sr="arg3" ve="3">ok</Str>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Int sr="arg6" val="30"/>
+			<Int sr="arg7" val="0"/>
+			<Str sr="arg8" ve="3"/>
+			<Str sr="arg9" ve="3"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>126</code>
+			<Str sr="arg0" ve="3">%http_data</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3"/>
+		</Action>
+	</Task>
+	<Task sr="task480">
+		<cdate>1686744915194</cdate>
+		<edate>1688737362543</edate>
+		<id>480</id>
+		<nme>System &gt;&gt; Perform Function Task</nme>
+		<pri>100</pri>
+		<Action sr="act0" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%par1</Str>
+			<Str sr="arg1" ve="3">run the task test with the parameter Josh</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act1" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%chatgpt_version</Str>
+			<Str sr="arg1" ve="3">gpt-3.5-turbo</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="0"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%chatgpt_version</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act10" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%arguments_json_string</Str>
+			<Str sr="arg1" ve="3">%function_call.arguments</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act11" ve="7">
+			<code>549</code>
+			<Str sr="arg0" ve="3">%par1</Str>
+			<Int sr="arg1" val="0"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+		</Action>
+		<Action sr="act12" ve="7">
+			<code>129</code>
+			<label>Check if using custom parameters (not par1 or par2)</label>
+			<Str sr="arg0" ve="3">const argumentsObject = JSON.parse(arguments_json_string);
+var custom_parameters_string = "";
+var has_custom_parameters = false;
+for (const parameter in argumentsObject) {
+    if (parameter != "par1" &amp;&amp; parameter != "par2") {
+        has_custom_parameters = true;
+        
+    }
+const value = argumentsObject[parameter];
+        setLocal(parameter, value);
+        custom_parameters_string += `\n%${parameter}: ${value}`
+}</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="45"/>
+		</Action>
+		<Action sr="act13" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%function_name</Str>
+			<Str sr="arg1" ve="3">%function_call.name</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act14" ve="7">
+			<code>129</code>
+			<Str sr="arg0" ve="3">const descriptionsString = global("ChatGPTTaskDescriptions");
+const descriptions = JSON.parse(descriptionsString);
+const matching = descriptions.find(description=&gt;description.name == function_name);
+if(matching){
+    var task_name = matching.taskerName;
+}</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="45"/>
+		</Action>
+		<Action sr="act15" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%has_custom_parameters</lhs>
+					<op>2</op>
+					<rhs>true</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act16" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%arguments_json_string</Str>
+			<Str sr="arg1" ve="3">%par1</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%par1</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act17" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%task_name%custom_parameters_string</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act18" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">%task_name</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">%arguments_json_string</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">%task_result</Str>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="1"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act19" ve="7">
+			<code>43</code>
+		</Action>
+		<Action sr="act2" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">System &gt;&gt; ChatGPT Function Task Remove Deleted Tasks</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="0"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act20" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<bool0>And</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%arguments_json_string.par1</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%arguments_json_string.par2</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act21" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%task_name</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act22" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">%task_name</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">%task_result</Str>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act23" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act24" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<bool0>And</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%arguments_json_string.par1</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%arguments_json_string.par2</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act25" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%task_name
+\%par1: %arguments_json_string.par1</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act26" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">%task_name</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">%arguments_json_string.par1</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">%task_result</Str>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act27" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act28" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<bool0>And</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%arguments_json_string.par1</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%arguments_json_string.par2</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act29" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%task_name
+\%par2: %arguments_json_string.par2</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act3" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">System &gt;&gt; ChatGPT HTTP Request</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">{
+    "model": "%chatgpt_version-0613",
+    "messages": [
+        {
+            "role": "user",
+            "content": "%par1"
+        }
+    ],
+    "functions": %ChatGPTTaskDescriptions,
+    "function_call": "auto"
+}</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">%http_data</Str>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act30" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">%task_name</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3"/>
+			<Str sr="arg3" ve="3">%arguments_json_string.par2</Str>
+			<Str sr="arg4" ve="3">%task_result</Str>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act31" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act32" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<bool0>And</bool0>
+				<Condition sr="c0" ve="3">
+					<lhs>%arguments_json_string.par1</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+				<Condition sr="c1" ve="3">
+					<lhs>%arguments_json_string.par2</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act33" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">%task_name
+\%par1: %arguments_json_string.par1
+\%par2: %arguments_json_string.par2</Str>
+			<Int sr="arg1" val="0"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act34" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">%task_name</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">%arguments_json_string.par1</Str>
+			<Str sr="arg3" ve="3">%arguments_json_string.par2</Str>
+			<Str sr="arg4" ve="3">%task_result</Str>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act35" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act36" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act37" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%task_result</lhs>
+					<op>12</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act38" ve="7">
+			<code>129</code>
+			<Str sr="arg0" ve="3">task_result = JSON.stringify(task_result)</Str>
+			<Str sr="arg1" ve="3"/>
+			<Int sr="arg2" val="1"/>
+			<Int sr="arg3" val="45"/>
+		</Action>
+		<Action sr="act39" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%body</Str>
+			<Str sr="arg1" ve="3">{
+    "model": "%chatgpt_version-0613",
+    "messages": [
+        {
+            "role": "user",
+            "content": "%par1"
+        },
+        %http_data.message,
+        {
+                    "role": "function",
+                    "name": "%function_name",
+                    "content": %task_result
+         }
+    ]
+}</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+		<Action sr="act4" ve="7">
+			<code>37</code>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%http_data.function_call</lhs>
+					<op>13</op>
+					<rhs></rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act40" ve="7">
+			<code>130</code>
+			<Str sr="arg0" ve="3">System &gt;&gt; ChatGPT HTTP Request</Str>
+			<Int sr="arg1">
+				<var>%priority</var>
+			</Int>
+			<Int sr="arg10" val="1"/>
+			<Str sr="arg2" ve="3">%body</Str>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3">%http_data</Str>
+			<Int sr="arg5" val="0"/>
+			<Int sr="arg6" val="0"/>
+			<Str sr="arg7" ve="3"/>
+			<Int sr="arg8" val="0"/>
+			<Int sr="arg9" val="0"/>
+		</Action>
+		<Action sr="act41" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act42" ve="7">
+			<code>126</code>
+			<Str sr="arg0" ve="3">%http_data.content</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%http_data.content</lhs>
+					<op>3</op>
+					<rhs>null</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act5" ve="7">
+			<code>548</code>
+			<Str sr="arg0" ve="3">No Task Matched</Str>
+			<Int sr="arg1" val="1"/>
+			<Str sr="arg10" ve="3"/>
+			<Int sr="arg11" val="1"/>
+			<Int sr="arg12" val="0"/>
+			<Str sr="arg13" ve="3"/>
+			<Int sr="arg14" val="0"/>
+			<Str sr="arg15" ve="3"/>
+			<Int sr="arg2" val="0"/>
+			<Str sr="arg3" ve="3"/>
+			<Str sr="arg4" ve="3"/>
+			<Str sr="arg5" ve="3"/>
+			<Str sr="arg6" ve="3"/>
+			<Str sr="arg7" ve="3"/>
+			<Str sr="arg8" ve="3"/>
+			<Int sr="arg9" val="1"/>
+		</Action>
+		<Action sr="act6" ve="7">
+			<code>126</code>
+			<Str sr="arg0" ve="3">%http_data.content</Str>
+			<Int sr="arg1" val="1"/>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Str sr="arg4" ve="3"/>
+			<ConditionList sr="if">
+				<Condition sr="c0" ve="3">
+					<lhs>%http_data.content</lhs>
+					<op>3</op>
+					<rhs>null</rhs>
+				</Condition>
+			</ConditionList>
+		</Action>
+		<Action sr="act7" ve="7">
+			<code>137</code>
+			<Int sr="arg0" val="0"/>
+			<Str sr="arg1" ve="3"/>
+		</Action>
+		<Action sr="act8" ve="7">
+			<code>38</code>
+		</Action>
+		<Action sr="act9" ve="7">
+			<code>547</code>
+			<Str sr="arg0" ve="3">%function_call</Str>
+			<Str sr="arg1" ve="3">%http_data.function_call</Str>
+			<Int sr="arg2" val="0"/>
+			<Int sr="arg3" val="0"/>
+			<Int sr="arg4" val="0"/>
+			<Int sr="arg5" val="3"/>
+			<Int sr="arg6" val="1"/>
+		</Action>
+	</Task>
+</TaskerData>
